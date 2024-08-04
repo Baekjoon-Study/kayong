@@ -1,20 +1,20 @@
-def Delsort(s):
-    t = ''
-    for i in range(len(s)):
-        if i + 1 < len(s):
-            if s[i+1] != s[i]:
-                t += s[i]
-        else:
-            t += s[i]
-    return t
+def isGroup(s):
+    seen = set()
+    prev = ''
+    for i in s:
+        if i != prev:
+            if i in seen:
+                return False
+            seen.add(i)
+        prev = i
+    return True
 
 N = int(input())
 cnt = 0
+
 for _ in range(N):
     S = input()
-    S1 = Delsort(S)
-    S2 = Delsort(''.join(sorted(S1)))
-    if len(S1) == len(S2):
+    if isGroup(S):
         cnt += 1
 
 print(cnt)
