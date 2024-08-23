@@ -1,8 +1,11 @@
-num = int(input())
-numbox = 1
+N = int(input())
+std = 1
+T = 6
 cnt = 1
 
-while num > numbox:
-    numbox += 6 * cnt
+while N > std:
+    std += T
+    T += 6
     cnt += 1
+
 print(cnt)
