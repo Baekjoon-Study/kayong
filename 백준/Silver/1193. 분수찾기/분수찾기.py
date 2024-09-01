@@ -1,17 +1,22 @@
-num = int(input())
-line = 1
+X = int(input())
 
-while num > line:
-    num -= line
-    line += 1
-    
-# 짝수일경우
-if line % 2 == 0:
-    a = num
-    b = line - num + 1
-# 홀수일경우
-elif line % 2 == 1:
-    a = line - num + 1
-    b = num
+S_num = 1
 
-print(f'{a}/{b}')
+cnt = 1
+
+while cnt < X:
+
+    S_num += 1
+
+    cnt += S_num
+
+a =  X - (cnt - S_num)
+
+b = S_num + 1 - a
+
+if S_num % 2 == 1:
+
+    a, b = b, a
+
+print('%s/%s'%(a, b))
+
