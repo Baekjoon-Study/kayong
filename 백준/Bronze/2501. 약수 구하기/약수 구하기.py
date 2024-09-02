@@ -1,10 +1,12 @@
-N,K=map(int,input().split())
-arr=[] #약수들을 담은 배열
-for i in range(1,N+1):
-    if(N%i==0):
-        arr.append(i)
+N, K = map(int, input().split())
+measure = [1]
 
-if(K<=len(arr)):
-    print(arr[K-1])
-else:
+for i in range(2, int(N/2) + 1):
+    if N%i == 0:
+        measure.append(i)
+measure.append(N)        
+
+if K > len(measure):
     print(0)
+else:
+    print(measure[K-1])
