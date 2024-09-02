@@ -9,6 +9,6 @@ while True:
             A.append(i)
             S += i
     if S == n:
-        print(n, ' = ', ' + '.join(str(i) for i in A), sep='')
+        print(n, '=', ' + '.join(str(i) for i in A))
     else:
         print('%s is NOT perfect.'%n)
