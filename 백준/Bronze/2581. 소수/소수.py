@@ -1,18 +1,19 @@
-m=int(input())
-n=int(input())
-li=[]
-for i in range(m,n+1):
-    e=0
-    if i>1:
-        for j in range(2,i):
-            if i%j==0:
-                e+=1
-                break
-        if e==0:
-            li.append(i)
+M = int(input())
+N = int(input())
+data = []
 
-if len(li)<1:
-    print(-1)
+for i in range(M, N+1):
+    if i > 1: 
+        is_prime = True
+        for j in range(2, int(i/2) + 1):
+            if i % j == 0:      # 부울대수를 활용해 전체 데이터가 조건문을 만족하지 않는 경우를 검출
+                is_prime = False
+                break
+        if is_prime:
+            data.append(i)
+
+if data:                   #리스트 내 데이터가 있는지 확인
+    print(sum(data))
+    print(data[0])
 else:
-    print(sum(li))
-    print(min(li))
+    print(-1)
